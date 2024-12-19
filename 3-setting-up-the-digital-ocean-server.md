@@ -70,7 +70,7 @@ After creating the droplet, secure it to prevent unauthorized access:
 
 1. Install Node.js (16 LTS version):
    ```bash
-   curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+   curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
    apt install -y nodejs
    ```
 2. Verify the installation:
@@ -78,12 +78,22 @@ After creating the droplet, secure it to prevent unauthorized access:
    node -v
    npm -v
    ```
-   ![node.js version](assets/3-3-2-node-vesrion.png)
+   ![node.js version](assets/3-3-2-node-version.png)
 3. Install PM2 globally to manage your Nuxt 2 application:
    ```bash
    npm install -g pm2
    ```
    ![pm2 version](assets/3-3-pm2.png)
+
+4. Install Yarn
+   ```bash
+   curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+   echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+   ```
+   
+   ```bash
+   sudo apt update && sudo apt install yarn
+   ```
 
 #### 3.4 Install and Configure Nginx
 

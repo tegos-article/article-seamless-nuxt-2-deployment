@@ -4,7 +4,7 @@ Before diving into the deployment process, ensure you have these essential compo
 #### 2.1 Development Environment
 - **Nuxt 2 Application**: Production-ready with configured `nuxt.config.js`
 - **Node.js and Package Manager**: 
-  - Node.js 14.x or 16.x LTS
+  - Node.js 18.x LTS
   - Yarn or NPM for package management
 
 #### 2.2 GitLab Repository
