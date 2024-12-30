@@ -80,7 +80,7 @@ deploy-production:
 
     # Create new release directory
     - export RELEASE_DIR=$(date +%Y%m%d%H%M%S)
-    - >
+    - |
       ssh $DEPLOY_USER@$PRODUCTION_SERVER "
       mkdir -p $PRODUCTION_APP_PATH/releases/$RELEASE_DIR;
       "
@@ -89,7 +89,7 @@ deploy-production:
     - scp -r $DEPLOY_FILES $DEPLOY_USER@$PRODUCTION_SERVER:$PRODUCTION_APP_PATH/releases/$RELEASE_DIR/
 
     # Update symlinks and restart application
-    - >
+    - |
       ssh $DEPLOY_USER@$PRODUCTION_SERVER "
       cd $PRODUCTION_APP_PATH;
       if [ -L current ]; then mv current previous; fi;

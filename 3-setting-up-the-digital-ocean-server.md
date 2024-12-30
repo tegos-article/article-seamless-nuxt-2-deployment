@@ -14,10 +14,8 @@ DigitalOcean droplet:
    ```bash
    ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
    ```
-   Add the public key (`~/.ssh/id_rsa.pub`) to your droplet.
-   Follow the instruction
-   from <a href="https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/" target="_blank">How to Add SSH
-   Keys to Droplets</a>.
+   Add the public key (`~/.ssh/id_rsa.pub`) to your droplet. Follow the instruction
+   from how to [add SSH keys to Droplets](https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/).
    ```bash
    cat ~/.ssh/id_rsa.pub
    ```
@@ -68,7 +66,7 @@ After creating the droplet, secure it to prevent unauthorized access:
 
 #### 3.3 Install Node.js and PM2
 
-1. Install Node.js (16 LTS version):
+1. Install Node.js (18 LTS version):
    ```bash
    curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
    apt install -y nodejs
@@ -127,7 +125,7 @@ After creating the droplet, secure it to prevent unauthorized access:
         add_header X-Content-Type-Options "nosniff";
         
         location / {
-            proxy_pass http://localhost:3000;
+            proxy_pass http://localhost:PORT;
             proxy_http_version 1.1;
             proxy_set_header Upgrade $http_upgrade;
             proxy_set_header Connection 'upgrade';
